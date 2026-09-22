@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- 
+    - primary meta tags
+  -->
+  <title>Family Food</title>
+  <meta name="title" content="Family Food - Amazing & Delicious Food">
+  <meta name="description" content="This is a Restaurant html template made by codewithsadee">
+
+  <!-- 
+    - favicon
+  -->
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <!-- 
+    - google font link
+  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+
+  <!-- 
+    - custom css link
+  -->
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+  <!-- 
+    - preload images
+  -->
+  
+
+</head>
+
+<body id="top">
+
+  <!-- 
+    - #PRELOADER
+  -->
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    <p class="text">Family Food </p>
+  </div>
+
+
+
+
+
+  <!-- 
+    - #TOP BAR
+  -->
+
+  <div class="topbar">
+    <div class="container">
+
+      <address class="topbar-item">
+        <div class="icon">
+          <ion-icon name="location-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span" data-i18n="topbarAddress">
+          Fast food restaurant elmilia jijel algeria
+        </span>
+      </address>
+
+      <div class="separator"></div>
+
+      <div class="topbar-item item-2">
+        <div class="icon">
+          <ion-icon name="time-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span" data-i18n="topbarHours">Daily : 8.00 am to 10.00 pm</span>
+      </div>
+
+      <a href="tel:+213776866996" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="call-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">+213 776 866 996</span>
+      </a>
+
+      <div class="separator"></div>
+
+      <a href="mailto:abdoghettoutd855@gmail.com" class="topbar-item link">
+        <div class="icon">
+          <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+        </div>
+
+        <span class="span">abdoghettoutd855@gmail.com</span>
+      </a>
+
+    </div>
+  </div>
+
+
+
+
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <a href="index.html" class="logo">
+        <img src="./assets/images/logo.svg" width="160" height="50" alt="Family Food - Home">
+      </a>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <a href="index.html" class="logo">
+          <img src="./assets/images/logo.svg" width="160" height="50" alt="Family Food - Home">
+        </a>
+
+        <ul class="navbar-list">
+
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span" data-i18n="home">Home</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="menu.html" class="navbar-link hover-underline active">
+              <div class="separator"></div>
+
+              <span class="span" data-i18n="menus">Menus</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span" data-i18n="about">About Us</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="reservation.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span" data-i18n="chefs">Our Chefs</span>
+            </a>
+          </li>
+
+          <li class="navbar-item">
+            <a href="reservation.html" class="navbar-link hover-underline">
+              <div class="separator"></div>
+
+              <span class="span" data-i18n="contact">Contact</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="text-center">
+          <p class="headline-1 navbar-title" data-i18n="visitAlgeria">Visit Algeria</p>
+
+          <address class="body-4" data-i18n="navbarAddress">
+            Fast food restaurant, <br>
+            elmilia jijel algeria 
+          </address>
+
+          <p class="body-4 navbar-text" data-i18n="navbarOpen">Open: 9.30 am - 2.30pm</p>
+
+          <a href="mailto:abdoghettoutd855@gmail.com" class="body-4 sidebar-link">abdoghettoutd855@gmail.com</a>
+
+          <div class="separator"></div>
+
+          <p class="contact-label" data-i18n="bookingRequest">Booking Request</p>
+
+          <a href="tel:+213776866996" class="body-1 contact-number hover-underline">
+            +213-776-866-996
+          </a>
+        </div>
+
+      </nav>
+
+     <div class="language-switcher">
+  <button type="button" class="language-btn" id="languageBtn" aria-label="Change language">
+    <span class="lang-active">العربية</span>
+    <span class="lang-separator">|</span>
+    <span>English</span>
+  </button>
+</div>
+
+<a href="reservation.html" class="btn btn-secondary">
+  <span class="text text-1" data-i18n="findTable">Find A Table</span>
+
+  <span class="text text-2" aria-hidden="true" data-i18n="findTable">Find A Table</span>
+</a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+
+    </div>
+  </header>
+
+
+
+
+
+  <main>
+    <article>
+
+<section class="section menu" aria-label="menu-label" id="menu">
+        <div class="container">
+
+          <p class="section-subtitle text-center label-2" data-i18n="specialSelection">Special Selection</p>
+
+          <h2 class="headline-1 section-title text-center" data-i18n="deliciousMenu">Delicious Menu</h2>
+
+          <ul class="grid-list" id="menuGridList" data-static-fallback>
+
+            <li>
+              <div class="menu-card hover:card">
+
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <img src="./assets/images/menu-1.png" width="100" height="100" loading="lazy" alt="Greek Salad"
+                    class="img-cover">
+                </figure>
+
+                <div>
+
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title" data-i18n="menuGreekSalad">Greek Salad</a>
+                    </h3>
+
+                    <span class="badge label-1" data-i18n="seasonal">Seasonal</span>
+
+                    <span class="span title-2">$25.50</span>
+                  </div>
+
+                  <p class="card-text label-1" data-i18n="menuGreekSaladText">
+                    Tomatoes, green bell pepper, sliced cucumber onion, olives, and feta cheese.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card hover:card">
+
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <img src="./assets/images/menu-2.png" width="100" height="100" loading="lazy" alt="Lasagne"
+                    class="img-cover">
+                </figure>
+
+                <div>
+
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title" data-i18n="menuLasagne">Lasagne</a>
+                    </h3>
+
+                    <span class="span title-2">$40.00</span>
+                  </div>
+
+                  <p class="card-text label-1" data-i18n="menuLasagneText">
+                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card hover:card">
+
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <img src="./assets/images/menu-3.png" width="100" height="100" loading="lazy" alt="Butternut Pumpkin"
+                    class="img-cover">
+                </figure>
+
+                <div>
+
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title" data-i18n="menuButternutPumpkin">Butternut Pumpkin</a>
+                    </h3>
+
+                    <span class="span title-2">$10.00</span>
+                  </div>
+
+                  <p class="card-text label-1" data-i18n="menuButternutPumpkinText">
+                    Typesetting industry lorem Lorem Ipsum is simply dummy text of the priand.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card hover:card">
+
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <img src="./assets/images/menu-4.png" width="100" height="100" loading="lazy" alt="Tokusen Wagyu"
+                    class="img-cover">
+                </figure>
+
+                <div>
+
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title" data-i18n="menuTokusenWagyu">Tokusen Wagyu</a>
+                    </h3>
+
+                    <span class="badge label-1" data-i18n="newBadge">New</span>
+
+                    <span class="span title-2">$39.00</span>
+                  </div>
+
+                  <p class="card-text label-1" data-i18n="menuTokusenWagyuText">
+                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card hover:card">
+
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <img src="./assets/images/menu-5.png" width="100" height="100" loading="lazy" alt="Olivas Rellenas"
+                    class="img-cover">
+                </figure>
+
+                <div>
+
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title" data-i18n="menuOlivasRellenas">Olivas Rellenas</a>
+                    </h3>
+
+                    <span class="span title-2">$25.00</span>
+                  </div>
+
+                  <p class="card-text label-1" data-i18n="menuOlivasRellenasText">
+                    Avocados with crab meat, red onion, crab salad stuffed red bell pepper and green bell pepper.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card hover:card">
+
+                <figure class="card-banner img-holder" style="--width: 100; --height: 100;">
+                  <img src="./assets/images/menu-6.png" width="100" height="100" loading="lazy" alt="Opu Fish"
+                    class="img-cover">
+                </figure>
+
+                <div>
+
+                  <div class="title-wrapper">
+                    <h3 class="title-3">
+                      <a href="#" class="card-title" data-i18n="menuOpuFish">Opu Fish</a>
+                    </h3>
+
+                    <span class="span title-2">$49.00</span>
+                  </div>
+
+                  <p class="card-text label-1" data-i18n="menuOpuFishText">
+                    Vegetables, cheeses, ground meats, tomato sauce, seasonings and spices
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <p class="menu-text text-center">
+            <span data-i18n="menuWinterText1">During winter daily from</span> <span class="span">7:00 pm</span> <span data-i18n="menuWinterText2">to</span> <span class="span">9:00 pm</span>
+          </p>
+
+          <a href="reservation.html" class="btn btn-primary">
+            <span class="text text-1" data-i18n="viewAllMenu">View All Menu</span>
+
+            <span class="text text-2" aria-hidden="true" data-i18n="viewAllMenu">View All Menu</span>
+          </a>
+
+          <img src="./assets/images/shape-5.png" width="921" height="1036" loading="lazy" alt="shape"
+            class="shape shape-2 move-anim">
+          <img src="./assets/images/shape-6.png" width="343" height="345" loading="lazy" alt="shape"
+            class="shape shape-3 move-anim">
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+
+
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer section has-bg-image text-center"
+    style="background-image: url('./assets/images/footer-bg.jpg')">
+    <div class="container">
+
+      <div class="footer-top grid-list">
+
+        <div class="footer-brand has-before has-after">
+
+          <a href="index.html" class="logo">
+            <img src="./assets/images/logo.svg" width="160" height="50" loading="lazy" alt="grilli home">
+          </a>
+
+          <address class="body-4" data-i18n="footerAddress">
+             Fast Food Restaurant Elmilia jijel algeria
+          </address>
+
+          <a href="mailto:booking@familyfood.com" class="body-4 contact-link">booking@familyfood.com</a>
+
+          <a href="tel:+213776866996" class="body-4 contact-link"><span data-i18n="footerBookingLabel">Booking Request :</span> +213 776866996</a>
+
+          <p class="body-4">
+            <span data-i18n="openLabel">Open :</span> 09:00 am - 01:00 pm
+          </p>
+
+          <div class="wrapper">
+            <div class="separator"></div>
+            <div class="separator"></div>
+            <div class="separator"></div>
+          </div>
+
+          <p class="title-1" data-i18n="getNewsOffers">Get News & Offers</p>
+
+          <p class="label-1">
+            <span data-i18n="subscribeUsGet">Subscribe us & Get</span> <span class="span" data-i18n="offPercent">25% Off.</span>
+          </p>
+
+          <form action="" class="input-wrapper">
+            <div class="icon-wrapper">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+
+              <input type="email" name="email_address" placeholder="Your email" autocomplete="off" class="input-field" data-i18n-placeholder="yourEmail">
+            </div>
+
+            <button type="submit" class="btn btn-secondary">
+              <span class="text text-1" data-i18n="subscribeBtn">Subscribe</span>
+
+              <span class="text text-2" aria-hidden="true" data-i18n="subscribeBtn">Subscribe</span>
+            </button>
+          </form>
+
+        </div>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="index.html" class="label-2 footer-link hover-underline" data-i18n="home">Home</a>
+          </li>
+
+          <li>
+            <a href="menu.html" class="label-2 footer-link hover-underline" data-i18n="menus">Menus</a>
+          </li>
+
+          <li>
+            <a href="about.html" class="label-2 footer-link hover-underline" data-i18n="about">About Us</a>
+          </li>
+
+          <li>
+            <a href="reservation.html" class="label-2 footer-link hover-underline" data-i18n="chefs">Our Chefs</a>
+          </li>
+
+          <li>
+            <a href="reservation.html" class="label-2 footer-link hover-underline" data-i18n="contact">Contact</a>
+          </li>
+
+        </ul>
+
+        <ul class="footer-list">
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Facebook</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Instagram</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Twitter</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Youtube</a>
+          </li>
+
+          <li>
+            <a href="#" class="label-2 footer-link hover-underline">Google Map</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+
+        <p class="copyright">
+           2022 Family Food. <span data-i18n="allRightsReserved">All Rights Reserved</span> | <span data-i18n="craftedBy">Crafted by</span> <a href="mailto:abdoghettoutd855@gmail.com" class="link">codewithsadee</a>
+        </p>
+
+      </div>
+
+    </div>
+  </footer>
+
+
+
+
+
+
+
+
+
+
+  <!-- 
+    - Firebase (used for the live menu and table reservations, shared with the admin dashboard)
+  -->
+  <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.2/firebase-firestore-compat.js"></script>
+
+  <!-- 
+    - custom js link
+  -->
+  <script src="./assets/js/script.js"></script>
+
+  <!-- 
+    - ionicon link
+  -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+
+</html>
