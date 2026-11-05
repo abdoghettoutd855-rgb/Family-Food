@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>مطعم — الرئيسية</title>
+  <meta name="title" content="مطعم يقدم أشهى الأطباق الجزائرية">
+  <meta name="description" content="اكتشف أشهى الأطباق الجزائرية واحجز طاولتك بسهولة.">
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body id="top">
+  <script>
+
+    setTimeout(function () {
+      var p = document.querySelector('[data-preaload]');
+      if (p && !p.classList.contains('loaded')) {
+        p.classList.add('loaded');
+        document.body.classList.add('loaded');
+      }
+    }, 6000);
+  </script>
+
+
+  
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    
+  </div>
+
+  <div class="topbar">
+    <div class="container">
+      <div class="separator"></div>
+      <div class="topbar-item item-2">
+        <div class="icon"><ion-icon name="time-outline" aria-hidden="true"></ion-icon></div>
+        <span class="span" data-i18n="topbarHours">Daily : 8.00 am to 10.00 pm</span>
+      </div>
+      <a href="tel:+213776866996" class="topbar-item link">
+        <div class="icon"><ion-icon name="call-outline" aria-hidden="true"></ion-icon></div>
+        <span class="span">+213 776 866 996</span>
+      </a>
+      <div class="separator"></div>
+    </div>
+  </div>
+
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <nav class="navbar" data-navbar>
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link hover-underline active">
+              <div class="separator"></div><span class="span" data-i18n="home">Home</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="menu.html" class="navbar-link hover-underline">
+              <div class="separator"></div><span class="span" data-i18n="menus">Menus</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link hover-underline">
+              <div class="separator"></div><span class="span" data-i18n="about">About Us</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="reservation.html" class="navbar-link hover-underline">
+              <div class="separator"></div><span class="span" data-i18n="contact">Contact</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="text-center">
+          <p class="body-4 navbar-text" data-i18n="navbarOpen">Open: 9.30 am - 2.30pm</p>
+          <div class="separator"></div>
+          <p class="contact-label" data-i18n="bookingRequest">Booking Request</p>
+          <a href="tel:+213776866996" class="body-1 contact-number hover-underline">+213-776-866-996</a>
+        </div>
+      </nav>
+
+      <div class="language-switcher">
+        <button type="button" class="language-btn" id="languageBtn" aria-label="Change language">
+          <span class="lang-active">العربية</span>
+          <span class="lang-separator">|</span>
+          <span>English</span>
+        </button>
+      </div>
+
+      <a href="reservation.html" class="btn btn-secondary">
+        <span class="text text-1" data-i18n="findTable">Find A Table</span>
+        <span class="text text-2" aria-hidden="true" data-i18n="findTable">Find A Table</span>
+      </a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+
+      <section class="hero text-center" aria-label="home" id="home">
+        <ul class="hero-slider" data-hero-slider>
+
+          <li class="slider-item active" data-hero-slider-item>
+            <div class="slider-bg">
+              <img src="./assets/images/hero-slider-1.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+            <p class="label-2 section-subtitle slider-reveal" data-i18n="heroSubtitle1">Tradational & Hygine</p>
+            <h1 class="display-1 hero-title slider-reveal" data-i18n="heroTitle1">For the love of <br>delicious food</h1>
+            <p class="body-2 hero-text slider-reveal" data-i18n="heroText">Come with family & feel the joy of mouthwatering food</p>
+            <a href="menu.html" class="btn btn-primary slider-reveal">
+              <span class="text text-1" data-i18n="viewMenu">View Our Menu</span>
+              <span class="text text-2" aria-hidden="true" data-i18n="viewMenu">View Our Menu</span>
+            </a>
+          </li>
+
+          <li class="slider-item" data-hero-slider-item>
+            <div class="slider-bg">
+              <img src="./assets/images/hero-slider-2.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+            <p class="label-2 section-subtitle slider-reveal" data-i18n="heroSubtitle2">delightful experience</p>
+            <h1 class="display-1 hero-title slider-reveal" data-i18n="heroTitle2">Flavors Inspired by <br>the Seasons</h1>
+            <p class="body-2 hero-text slider-reveal" data-i18n="heroText">Come with family & feel the joy of mouthwatering food</p>
+            <a href="menu.html" class="btn btn-primary slider-reveal">
+              <span class="text text-1" data-i18n="viewMenu">View Our Menu</span>
+              <span class="text text-2" aria-hidden="true" data-i18n="viewMenu">View Our Menu</span>
+            </a>
+          </li>
+
+          <li class="slider-item" data-hero-slider-item>
+            <div class="slider-bg">
+              <img src="./assets/images/hero-slider-3.jpg" width="1880" height="950" alt="" class="img-cover">
+            </div>
+            <p class="label-2 section-subtitle slider-reveal" data-i18n="heroSubtitle3">amazing & delicious</p>
+            <h1 class="display-1 hero-title slider-reveal" data-i18n="heroTitle3">Where every flavor <br>tells a story</h1>
+            <p class="body-2 hero-text slider-reveal" data-i18n="heroText">Come with family & feel the joy of mouthwatering food</p>
+            <a href="menu.html" class="btn btn-primary slider-reveal">
+              <span class="text text-1" data-i18n="viewMenu">View Our Menu</span>
+              <span class="text text-2" aria-hidden="true" data-i18n="viewMenu">View Our Menu</span>
+            </a>
+          </li>
+
+        </ul>
+
+        <button class="slider-btn prev" aria-label="slide to previous" data-prev-btn>
+          <ion-icon name="chevron-back"></ion-icon>
+        </button>
+        <button class="slider-btn next" aria-label="slide to next" data-next-btn>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </button>
+
+        <div class="slider-dots">
+          <span class="dot active"></span>
+          <span class="dot"></span>
+          <span class="dot"></span>
+        </div>
+
+        <a href="reservation.html" class="hero-btn">
+          <img src="./assets/images/hero-icon.png" width="48" height="48" alt="booking icon">
+          <span class="label-2 text-center span" data-i18n="bookATable">Book A Table</span>
+        </a>
+      </section>
+
+  
+      <section class="section service text-center" aria-label="service">
+        <div class="container">
+          <p class="section-subtitle label-2" data-i18n="flavorsForRoyalty">Flavors For Royalty</p>
+          <h2 class="section-title" data-i18n="weOfferTopNotch">We Offer Top Notch</h2>
+          <p class="section-text" data-i18n="serviceLorem">Traditional Algerian flatbread pieces served with a rich, slow-cooked sauce, chickpeas and tender meat.</p>
+
+          <ul class="grid-list">
+            <li>
+              <div class="service-card">
+                <a href="menu.html">
+                  <figure class="card-banner img-holder">
+                    <img src="./assets/images/service-1.jpg" width="285" height="336" loading="lazy" alt="Breakfast" class="img-cover">
+                  </figure>
+                </a>
+                <div class="card-content">
+                  <h3 class="title-4 card-title"><a href="menu.html" data-i18n="serviceBreakfast">Breakfast</a></h3>
+                  <a href="menu.html" class="btn-text hover-underline label-2" data-i18n="viewMenuSmall">View Menu</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <a href="menu.html">
+                  <figure class="card-banner img-holder">
+                    <img src="./assets/images/service-2.jpg" width="285" height="336" loading="lazy" alt="Appetizers" class="img-cover">
+                  </figure>
+                </a>
+                <div class="card-content">
+                  <h3 class="title-4 card-title"><a href="menu.html" data-i18n="serviceAppetizers">Appetizers</a></h3>
+                  <a href="menu.html" class="btn-text hover-underline label-2" data-i18n="viewMenuSmall">View Menu</a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="service-card">
+                <a href="menu.html">
+                  <figure class="card-banner img-holder">
+                    <img src="./assets/images/service-3.jpg" width="285" height="336" loading="lazy" alt="Drinks" class="img-cover">
+                  </figure>
+                </a>
+                <div class="card-content">
+                  <h3 class="title-4 card-title"><a href="menu.html" data-i18n="serviceDrinks">Drinks</a></h3>
+                  <a href="menu.html" class="btn-text hover-underline label-2" data-i18n="viewMenuSmall">View Menu</a>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+
+      <section class="special-dish text-center" aria-labelledby="dish-label">
+        <div class="special-dish-banner">
+          <img src="./assets/images/special-dish-banner.jpg" width="1400" height="900" loading="lazy" alt="special dish" class="img-cover">
+        </div>
+
+        <div class="special-dish-content bg-black-10">
+          <div class="container">
+            <img src="./assets/images/badge-1.png" width="28" height="41" loading="lazy" alt="badge" class="abs-img">
+            <p class="section-subtitle label-2" data-i18n="specialDishSubtitle">Special Dish</p>
+            <h2 class="section-title" data-i18n="lobsterTortellini">Traditional Chakhchoukha</h2>
+            <p class="section-text" data-i18n="specialDishLorem">Traditional Algerian flatbread pieces served with a rich, slow-cooked sauce, chickpeas and tender meat.</p>
+            <div class="wrapper">
+              <del class="del body-3">400 دج</del>
+              <span class="span body-1">200 دج</span>
+            </div>
+            <a href="menu.html" class="btn btn-primary">
+              <span class="text text-1" data-i18n="viewAllMenu">View All Menu</span>
+              <span class="text text-2" aria-hidden="true" data-i18n="viewAllMenu">View All Menu</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="footer section has-bg-image text-center" style="background-image: url('./assets/images/footer-bg.jpg')">
+    <div class="container">
+      <div class="footer-top grid-list">
+
+        <div class="footer-brand has-before has-after">
+          <a href="tel:+213776866996" class="body-4 contact-link"><span data-i18n="footerBookingLabel">Booking Request :</span> +213 776866996</a>
+          <p class="body-4"><span data-i18n="openLabel">Open :</span> 09:00 am - 01:00 pm</p>
+
+          <p class="title-1" data-i18n="getNewsOffers">Get News & Offers</p>
+          <p class="label-1"><span data-i18n="subscribeUsGet">Subscribe us & Get</span> <span class="span" data-i18n="offPercent">25% Off.</span></p>
+
+          <form action="" class="input-wrapper">
+            <div class="icon-wrapper">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+              <input type="email" name="email_address" placeholder="Your email" autocomplete="off" class="input-field" data-i18n-placeholder="yourEmail">
+            </div>
+            <button type="submit" class="btn btn-secondary">
+              <span class="text text-1" data-i18n="subscribeBtn">Subscribe</span>
+              <span class="text text-2" aria-hidden="true" data-i18n="subscribeBtn">Subscribe</span>
+            </button>
+          </form>
+        </div>
+
+        <ul class="footer-list">
+          <li><a href="index.html" class="label-2 footer-link hover-underline" data-i18n="home">Home</a></li>
+          <li><a href="menu.html" class="label-2 footer-link hover-underline" data-i18n="menus">Menus</a></li>
+          <li><a href="about.html" class="label-2 footer-link hover-underline" data-i18n="about">About Us</a></li>
+          <li><a href="reservation.html" class="label-2 footer-link hover-underline" data-i18n="contact">Contact</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Facebook</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Instagram</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><a href="#" class="label-2 footer-link hover-underline">Twitter</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Youtube</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Google Map</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          2026 <span data-i18n="allRightsReserved">All Rights Reserved</span> | <span data-i18n="craftedBy">Crafted by</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+ 
+  <nav class="bottom-nav">
+    <a href="index.html" class="bottom-nav-link active">
+      <ion-icon name="home-outline" aria-hidden="true"></ion-icon>
+      <span data-i18n="home">Home</span>
+    </a>
+    <a href="menu.html" class="bottom-nav-link">
+      <ion-icon name="restaurant-outline" aria-hidden="true"></ion-icon>
+      <span data-i18n="menus">Menus</span>
+    </a>
+    <a href="about.html" class="bottom-nav-link">
+      <ion-icon name="information-circle-outline" aria-hidden="true"></ion-icon>
+      <span data-i18n="about">About</span>
+    </a>
+    <a href="reservation.html" class="bottom-nav-link">
+      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+      <span data-i18n="contact">Contact</span>
+    </a>
+  </nav>
+
+
+  <a href="#top" class="back-top-btn" data-back-top-btn aria-label="back to top">
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+  
+
+  <script src="./assets/js/script.js"></script>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

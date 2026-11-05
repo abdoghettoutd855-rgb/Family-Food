@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>نظرة عامة — لوحة التحكم </title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" class="sidebar-logo">
+      
+      <span>لوحة الإدارة</span>
+    </a>
+
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item active"><ion-icon name="speedometer-outline"></ion-icon>نظرة عامة</a>
+      <a href="menu.html" class="nav-item"><ion-icon name="restaurant-outline"></ion-icon>محرر القائمة</a>
+      <a href="orders.html" class="nav-item"><ion-icon name="receipt-outline"></ion-icon>الطلبات</a>
+      <a href="employees.html" class="nav-item{active_employees}"><ion-icon name="people-outline"></ion-icon>الموظفون</a>
+
+      <a href="export.html" class="nav-item"><ion-icon name="download-outline"></ion-icon>تصدير القائمة</a>
+      <a href="billing.html" class="nav-item"><ion-icon name="card-outline"></ion-icon>الاشتراك والفواتير</a>
+      <a href="settings.html" class="nav-item"><ion-icon name="settings-outline"></ion-icon>الإعدادات</a>
+      <a href="../index.html" class="nav-item"><ion-icon name="globe-outline"></ion-icon>عرض الموقع</a>
+    </nav>
+
+    <div class="sidebar-user">
+      <div class="avatar">م</div>
+      <span>مدير المطعم</span>
+    </div>
+  </aside>
+  <div class="overlay" data-overlay></div>
+
+
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" data-menu-btn><ion-icon name="menu-outline"></ion-icon></button>
+      <div class="page-title">
+        <h1>لوحة التحكم</h1>
+        <p>مرحباً بعودتك! إليك ما يحدث في مطعمك اليوم.</p>
+      </div>
+      <a href="orders.html" class="btn btn-gold"><ion-icon name="add-outline"></ion-icon><span>طلب جديد</span></a>
+    </header>
+
+
+    <section class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon gold"><ion-icon name="receipt-outline"></ion-icon></div>
+        <div class="stat-info"><h3>إجمالي الطلبات</h3><div class="stat-value" id="stat-orders">—</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon green"><ion-icon name="cash-outline"></ion-icon></div>
+        <div class="stat-info"><h3>الإيرادات (المدفوعة)</h3><div class="stat-value" id="stat-revenue">—</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon blue"><ion-icon name="restaurant-outline"></ion-icon></div>
+        <div class="stat-info"><h3>أصناف القائمة</h3><div class="stat-value" id="stat-menu">—</div></div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon orange"><ion-icon name="time-outline"></ion-icon></div>
+        <div class="stat-info"><h3>طلبات معلقة</h3><div class="stat-value" id="stat-pending">—</div></div>
+      </div>
+    </section>
+
+    <div class="grid-2">
+     
+      <section class="card">
+        <div class="card-head">
+          <div><h2>أحدث الطلبات</h2><p>آخر الطلبات الواردة إلى المطعم</p></div>
+          <a href="orders.html" class="btn btn-green btn-sm"><ion-icon name="list-outline"></ion-icon>عرض الكل</a>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr><th>رقم الطلب</th><th>العميل</th><th>المبلغ</th><th>الحالة</th><th>الوقت</th></tr>
+            </thead>
+            <tbody id="recent-orders-body">
+              <tr><td colspan="5" class="table-loading"><ion-icon name="hourglass-outline" class="spin"></ion-icon> جاري التحميل...</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    
+      <aside class="card">
+        <div class="card-head"><div><h2>إجراءات سريعة</h2><p>اختصارات لأهم المهام</p></div></div>
+        <div class="quick-list">
+          <a href="menu.html" class="quick-item"><ion-icon name="restaurant-outline"></ion-icon>إدارة القائمة</a>
+          <a href="export.html" class="quick-item"><ion-icon name="document-text-outline"></ion-icon>تصدير قائمة الطعام PDF</a>
+          <a href="settings.html" class="quick-item"><ion-icon name="settings-outline"></ion-icon>إعدادات المطعم</a>
+          <a href="../index.html" class="quick-item"><ion-icon name="eye-outline"></ion-icon>عرض الصفحة العامة</a>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <div id="toast-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+
+    if (!window.supabase) document.write('<script src="https://fastly.jsdelivr.net/npm/@supabase/supabase-js@2"><\/script>');
+    if (!window.supabase) document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>');
+  </script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

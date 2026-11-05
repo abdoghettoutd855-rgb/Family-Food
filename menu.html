@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>مطعم — القائمة</title>
+  <meta name="title" content="مطعم يقدم أشهى الأطباق الجزائرية">
+  <meta name="description" content="اكتشف أشهى الأطباق الجزائرية واحجز طاولتك بسهولة.">
+
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./assets/css/style.css">
+
+</head>
+
+<body id="top">
+  <script>
+   
+    setTimeout(function () {
+      var p = document.querySelector('[data-preaload]');
+      if (p && !p.classList.contains('loaded')) {
+        p.classList.add('loaded');
+        document.body.classList.add('loaded');
+      }
+    }, 6000);
+  </script>
+
+
+  <div class="preload" data-preaload>
+    <div class="circle"></div>
+    
+  </div>
+
+
+  <div class="topbar">
+    <div class="container">
+      <div class="separator"></div>
+      <div class="topbar-item item-2">
+        <div class="icon"><ion-icon name="time-outline" aria-hidden="true"></ion-icon></div>
+        <span class="span" data-i18n="topbarHours">Daily : 8.00 am to 10.00 pm</span>
+      </div>
+      <a href="tel:+213776866996" class="topbar-item link">
+        <div class="icon"><ion-icon name="call-outline" aria-hidden="true"></ion-icon></div>
+        <span class="span">+213 776 866 996</span>
+      </a>
+      <div class="separator"></div>
+    </div>
+  </div>
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <nav class="navbar" data-navbar>
+        <button class="close-btn" aria-label="close menu" data-nav-toggler>
+          <ion-icon name="close-outline" aria-hidden="true"></ion-icon>
+        </button>
+
+        <ul class="navbar-list">
+          <li class="navbar-item">
+            <a href="index.html" class="navbar-link hover-underline">
+              <div class="separator"></div><span class="span" data-i18n="home">Home</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="menu.html" class="navbar-link hover-underline active">
+              <div class="separator"></div><span class="span" data-i18n="menus">Menus</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="about.html" class="navbar-link hover-underline">
+              <div class="separator"></div><span class="span" data-i18n="about">About Us</span>
+            </a>
+          </li>
+          <li class="navbar-item">
+            <a href="reservation.html" class="navbar-link hover-underline">
+              <div class="separator"></div><span class="span" data-i18n="contact">Contact</span>
+            </a>
+          </li>
+        </ul>
+
+        <div class="text-center">
+          <p class="body-4 navbar-text" data-i18n="navbarOpen">Open: 9.30 am - 2.30pm</p>
+          <div class="separator"></div>
+          <p class="contact-label" data-i18n="bookingRequest">Booking Request</p>
+          <a href="tel:+213776866996" class="body-1 contact-number hover-underline">+213-776-866-996</a>
+        </div>
+      </nav>
+
+      <div class="language-switcher">
+        <button type="button" class="language-btn" id="languageBtn" aria-label="Change language">
+          <span class="lang-active">العربية</span>
+          <span class="lang-separator">|</span>
+          <span>English</span>
+        </button>
+      </div>
+
+      <a href="reservation.html" class="btn btn-secondary">
+        <span class="text text-1" data-i18n="findTable">Find A Table</span>
+        <span class="text text-2" aria-hidden="true" data-i18n="findTable">Find A Table</span>
+      </a>
+
+      <button class="nav-open-btn" aria-label="open menu" data-nav-toggler>
+        <span class="line line-1"></span>
+        <span class="line line-2"></span>
+        <span class="line line-3"></span>
+      </button>
+
+      <div class="overlay" data-nav-toggler data-overlay></div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+
+    
+      <section class="section menu" aria-label="menu-label" id="menu">
+        <div class="container">
+
+          <p class="section-subtitle text-center label-2" data-i18n="specialSelection">Special Selection</p>
+          <h2 class="section-title text-center" data-i18n="deliciousMenu">Delicious Menu</h2>
+
+          <ul class="grid-list" id="menuGridList" data-static-fallback>
+
+            <li>
+              <div class="menu-card">
+                <figure class="card-banner img-holder">
+                  <img src="./assets/images/menu-1.jpg" width="100" height="100" loading="lazy" alt="Hmiss — Grilled Pepper Salad" class="img-cover">
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title" data-i18n="menuGreekSalad">Hmiss — Grilled Pepper Salad</a></h3>
+                    <span class="badge label-1" data-i18n="seasonal">Seasonal</span>
+                    <span class="span title-2">450 دج</span>
+                  </div>
+                  <p class="card-text label-1" data-i18n="menuGreekSaladText">Roasted green peppers and tomatoes with garlic, olive oil and cumin.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card">
+                <figure class="card-banner img-holder">
+                  <img src="./assets/images/menu-2.png" width="100" height="100" loading="lazy" alt="Chakhchoukha" class="img-cover">
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title" data-i18n="menuLasagne">Chakhchoukha</a></h3>
+                    <span class="span title-2">650 دج</span>
+                  </div>
+                  <p class="card-text label-1" data-i18n="menuLasagneText">Traditional torn flatbread served with rich red sauce, chickpeas and tender meat.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card">
+                <figure class="card-banner img-holder">
+                  <img src="./assets/images/menu-3.jpg" width="100" height="100" loading="lazy" alt="Tajine Zitoun" class="img-cover">
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title" data-i18n="menuButternutPumpkin">Tajine Zitoun</a></h3>
+                    <span class="span title-2">500 دج</span>
+                  </div>
+                  <p class="card-text label-1" data-i18n="menuButternutPumpkinText">Chicken with green olives, carrots, lemon and a fragrant spiced sauce.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card">
+                <figure class="card-banner img-holder">
+                  <img src="./assets/images/menu-4.jpg" width="100" height="100" loading="lazy" alt="Algerian Couscous" class="img-cover">
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title" data-i18n="menuTokusenWagyu">Algerian Couscous</a></h3>
+                    <span class="badge label-1" data-i18n="newBadge">New</span>
+                    <span class="span title-2">900 دج</span>
+                  </div>
+                  <p class="card-text label-1" data-i18n="menuTokusenWagyuText">Traditional torn flatbread served with rich red sauce, chickpeas and tender meat..</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card">
+                <figure class="card-banner img-holder">
+                  <img src="./assets/images/menu-5.jpg" width="100" height="100" loading="lazy" alt="Bourek" class="img-cover">
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title" data-i18n="menuOlivasRellenas">Bourek</a></h3>
+                    <span class="span title-2">350 دج</span>
+                  </div>
+                  <p class="card-text label-1" data-i18n="menuOlivasRellenasText">Crispy pastry rolls filled with minced meat, onion, parsley and potato.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="menu-card">
+                <figure class="card-banner img-holder">
+                  <img src="./assets/images/menu-6.jpg" width="100" height="100" loading="lazy" alt="Mahajeb" class="img-cover">
+                </figure>
+                <div>
+                  <div class="title-wrapper">
+                    <h3 class="title-3"><a href="#" class="card-title" data-i18n="menuOpuFish">Mahajeb</a></h3>
+                    <span class="span title-2">600 دج</span>
+                  </div>
+                  <p class="card-text label-1" data-i18n="menuOpuFishText">Traditional torn flatbread served with rich red sauce, chickpeas and tender meat.</p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+          <p class="menu-text text-center">
+            <span data-i18n="menuWinterText1">During winter daily from</span>
+            <span class="span">7:00 pm</span>
+            <span data-i18n="menuWinterText2">to</span>
+            <span class="span">9:00 pm</span>
+          </p>
+
+          <a href="reservation.html" class="btn btn-primary">
+            <span class="text text-1" data-i18n="viewAllMenu">View All Menu</span>
+            <span class="text text-2" aria-hidden="true" data-i18n="viewAllMenu">View All Menu</span>
+          </a>
+
+        </div>
+      </section>
+
+   
+      <section class="section event bg-black-10" aria-label="event">
+        <div class="container">
+
+          <p class="section-subtitle label-2 text-center" data-i18n="recentUpdates">Recent Updates</p>
+          <h2 class="section-title text-center" data-i18n="upcomingEvent">Upcoming Event</h2>
+
+          <ul class="grid-list">
+
+            <li>
+              <div class="event-card">
+                <div class="card-banner img-holder">
+                  <img src="./assets/images/event-1.jpg" width="350" height="450" loading="lazy" alt="event" class="img-cover">
+                  <time class="publish-date label-2" datetime="2026-09-15">15/09/2026</time>
+                </div>
+                <div class="card-content">
+                  <p class="card-subtitle label-2 text-center" data-i18n="foodFlavour">Food, Flavour</p>
+                  <h3 class="card-title title-4 text-center" data-i18n="flavourQuote">Flavour so good you’ll try to eat with your eyes.</h3>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="event-card">
+                <div class="card-banner img-holder">
+                  <img src="./assets/images/event-2.jpg" width="350" height="450" loading="lazy" alt="event" class="img-cover">
+                  <time class="publish-date label-2" datetime="2026-09-08">08/09/2026</time>
+                </div>
+                <div class="card-content">
+                  <p class="card-subtitle label-2 text-center" data-i18n="healthyFood">Healthy Food</p>
+                  <h3 class="card-title title-4 text-center" data-i18n="flavourQuote">Flavour so good you’ll try to eat with your eyes.</h3>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="event-card">
+                <div class="card-banner img-holder">
+                  <img src="./assets/images/event-3.jpg" width="350" height="450" loading="lazy" alt="event" class="img-cover">
+                  <time class="publish-date label-2" datetime="2026-09-03">03/09/2026</time>
+                </div>
+                <div class="card-content">
+                  <p class="card-subtitle label-2 text-center" data-i18n="recipie">Recipie</p>
+                  <h3 class="card-title title-4 text-center" data-i18n="flavourQuote">Flavour so good you’ll try to eat with your eyes.</h3>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <footer class="footer section has-bg-image text-center" style="background-image: url('./assets/images/footer-bg.jpg')">
+    <div class="container">
+      <div class="footer-top grid-list">
+
+        <div class="footer-brand has-before has-after">
+          <a href="tel:+213776866996" class="body-4 contact-link"><span data-i18n="footerBookingLabel">Booking Request :</span> +213 776866996</a>
+          <p class="body-4"><span data-i18n="openLabel">Open :</span> 09:00 am - 01:00 pm</p>
+
+          <p class="title-1" data-i18n="getNewsOffers">Get News & Offers</p>
+          <p class="label-1"><span data-i18n="subscribeUsGet">Subscribe us & Get</span> <span class="span" data-i18n="offPercent">25% Off.</span></p>
+
+          <form action="" class="input-wrapper">
+            <div class="icon-wrapper">
+              <ion-icon name="mail-outline" aria-hidden="true"></ion-icon>
+              <input type="email" name="email_address" placeholder="Your email" autocomplete="off" class="input-field" data-i18n-placeholder="yourEmail">
+            </div>
+            <button type="submit" class="btn btn-secondary">
+              <span class="text text-1" data-i18n="subscribeBtn">Subscribe</span>
+              <span class="text text-2" aria-hidden="true" data-i18n="subscribeBtn">Subscribe</span>
+            </button>
+          </form>
+        </div>
+
+        <ul class="footer-list">
+          <li><a href="index.html" class="label-2 footer-link hover-underline" data-i18n="home">Home</a></li>
+          <li><a href="menu.html" class="label-2 footer-link hover-underline" data-i18n="menus">Menus</a></li>
+          <li><a href="about.html" class="label-2 footer-link hover-underline" data-i18n="about">About Us</a></li>
+          <li><a href="reservation.html" class="label-2 footer-link hover-underline" data-i18n="contact">Contact</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Facebook</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Instagram</a></li>
+        </ul>
+
+        <ul class="footer-list">
+          <li><a href="#" class="label-2 footer-link hover-underline">Twitter</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Youtube</a></li>
+          <li><a href="#" class="label-2 footer-link hover-underline">Google Map</a></li>
+        </ul>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          2026 <span data-i18n="allRightsReserved">All Rights Reserved</span> | <span data-i18n="craftedBy">Crafted by</span>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+
+  <nav class="bottom-nav">
+    <a href="index.html" class="bottom-nav-link">
+      <ion-icon name="home-outline" aria-hidden="true"></ion-icon>
+      <span data-i18n="home">Home</span>
+    </a>
+    <a href="menu.html" class="bottom-nav-link active">
+      <ion-icon name="restaurant-outline" aria-hidden="true"></ion-icon>
+      <span data-i18n="menus">Menus</span>
+    </a>
+    <a href="about.html" class="bottom-nav-link">
+      <ion-icon name="information-circle-outline" aria-hidden="true"></ion-icon>
+      <span data-i18n="about">About</span>
+    </a>
+    <a href="reservation.html" class="bottom-nav-link">
+      <ion-icon name="calendar-outline" aria-hidden="true"></ion-icon>
+      <span data-i18n="contact">Contact</span>
+    </a>
+  </nav>
+
+  
+  <a href="#top" class="back-top-btn" data-back-top-btn aria-label="back to top">
+    <ion-icon name="chevron-up" aria-hidden="true"></ion-icon>
+  </a>
+
+
+  <script src="./assets/js/script.js"></script>
+
+
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+</body>
+</html>

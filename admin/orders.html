@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الطلبات — لوحة التحكم </title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" class="sidebar-logo">
+      
+      <span>لوحة الإدارة</span>
+    </a>
+
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item"><ion-icon name="speedometer-outline"></ion-icon>نظرة عامة</a>
+      <a href="menu.html" class="nav-item"><ion-icon name="restaurant-outline"></ion-icon>محرر القائمة</a>
+      <a href="orders.html" class="nav-item active"><ion-icon name="receipt-outline"></ion-icon>الطلبات</a>
+      <a href="employees.html" class="nav-item{active_employees}"><ion-icon name="people-outline"></ion-icon>الموظفون</a>
+
+      <a href="export.html" class="nav-item"><ion-icon name="download-outline"></ion-icon>تصدير القائمة</a>
+      <a href="billing.html" class="nav-item"><ion-icon name="card-outline"></ion-icon>الاشتراك والفواتير</a>
+      <a href="settings.html" class="nav-item"><ion-icon name="settings-outline"></ion-icon>الإعدادات</a>
+      <a href="../index.html" class="nav-item"><ion-icon name="globe-outline"></ion-icon>عرض الموقع</a>
+    </nav>
+
+    <div class="sidebar-user">
+      <div class="avatar">م</div>
+      <span>مدير المطعم</span>
+    </div>
+  </aside>
+  <div class="overlay" data-overlay></div>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" data-menu-btn><ion-icon name="menu-outline"></ion-icon></button>
+      <div class="page-title">
+        <h1>الطلبات</h1>
+        <p>تابع كل الطلبات وحدّث حالتها</p>
+      </div>
+    </header>
+
+    <div class="filters" id="status-filters">
+      <button class="filter-btn active" data-status="all">الكل</button>
+      <button class="filter-btn" data-status="pending">قيد الانتظار</button>
+      <button class="filter-btn" data-status="preparing">قيد التحضير</button>
+      <button class="filter-btn" data-status="ready">جاهز</button>
+      <button class="filter-btn" data-status="delivered">تم التوصيل</button>
+      <button class="filter-btn" data-status="cancelled">ملغي</button>
+    </div>
+
+    <section class="card">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>رقم الطلب</th><th>العميل</th><th>النوع</th><th>المبلغ</th><th>الدفع</th><th>الحالة</th><th>الوقت</th><th></th></tr>
+          </thead>
+          <tbody id="orders-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+
+  <div class="modal" id="order-modal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2>تفاصيل الطلب <span id="modal-order-id"></span></h2>
+        <button class="modal-close" onclick="closeModal('order-modal')"><ion-icon name="close-outline"></ion-icon></button>
+      </div>
+      <div id="order-detail-content"></div>
+      <div id="order-status-actions"></div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+  
+    if (!window.supabase) document.write('<script src="https://fastly.jsdelivr.net/npm/@supabase/supabase-js@2"><\/script>');
+    if (!window.supabase) document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>');
+  </script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/orders.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الاشتراك والفواتير — لوحة التحكم </title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" class="sidebar-logo">
+      
+      <span>لوحة الإدارة</span>
+    </a>
+
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item"><ion-icon name="speedometer-outline"></ion-icon>نظرة عامة</a>
+      <a href="menu.html" class="nav-item"><ion-icon name="restaurant-outline"></ion-icon>محرر القائمة</a>
+      <a href="orders.html" class="nav-item"><ion-icon name="receipt-outline"></ion-icon>الطلبات</a>
+      <a href="employees.html" class="nav-item{active_employees}"><ion-icon name="people-outline"></ion-icon>الموظفون</a>
+
+      <a href="export.html" class="nav-item"><ion-icon name="download-outline"></ion-icon>تصدير القائمة</a>
+      <a href="billing.html" class="nav-item active"><ion-icon name="card-outline"></ion-icon>الاشتراك والفواتير</a>
+      <a href="settings.html" class="nav-item"><ion-icon name="settings-outline"></ion-icon>الإعدادات</a>
+      <a href="../index.html" class="nav-item"><ion-icon name="globe-outline"></ion-icon>عرض الموقع</a>
+    </nav>
+
+    <div class="sidebar-user">
+      <div class="avatar">م</div>
+      <span>مدير المطعم</span>
+    </div>
+  </aside>
+  <div class="overlay" data-overlay></div>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" data-menu-btn><ion-icon name="menu-outline"></ion-icon></button>
+      <div class="page-title">
+        <h1>الاشتراك والفواتير</h1>
+        <p>خطتك الحالية وفواتيرك</p>
+      </div>
+    </header>
+
+    <section class="plan-card">
+      <h2>الخطة المجانية</h2>
+      <p style="color: var(--quick-silver)">خطتك الحالية</p>
+      <div class="plan-price">0 <small>دج / شهر</small></div>
+      <ul class="plan-list">
+        <li><ion-icon name="checkmark-circle"></ion-icon>قائمة طعام غير محدودة الأصناف</li>
+        <li><ion-icon name="checkmark-circle"></ion-icon>إدارة الطلبات والحالات</li>
+        <li><ion-icon name="checkmark-circle"></ion-icon>تصدير القائمة PDF</li>
+        <li><ion-icon name="checkmark-circle"></ion-icon>قاعدة بيانات Supabase مجانية</li>
+      </ul>
+      <br>
+      <button class="btn btn-gold" onclick="toast('الخطة المجانية مفعّلة بالفعل!')"><ion-icon name="star-outline"></ion-icon>الخطة الحالية</button>
+    </section>
+
+    <section class="card">
+      <div class="card-head"><div><h2>الفواتير</h2><p>لا توجد فواتير — الخطة مجانية</p></div></div>
+    </section>
+  </main>
+
+  <div id="toast-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+
+    if (!window.supabase) document.write('<script src="https://fastly.jsdelivr.net/npm/@supabase/supabase-js@2"><\/script>');
+    if (!window.supabase) document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>');
+  </script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/billing.js"></script>
+</body>
+</html>

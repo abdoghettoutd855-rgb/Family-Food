@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>محرر القائمة — لوحة التحكم </title>
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&family=Forum&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/admin.css">
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+
+  <aside class="sidebar" id="sidebar">
+    <a href="index.html" class="sidebar-logo">
+      
+      <span>لوحة الإدارة</span>
+    </a>
+
+    <nav class="sidebar-nav">
+      <a href="index.html" class="nav-item"><ion-icon name="speedometer-outline"></ion-icon>نظرة عامة</a>
+      <a href="menu.html" class="nav-item active"><ion-icon name="restaurant-outline"></ion-icon>محرر القائمة</a>
+      <a href="orders.html" class="nav-item"><ion-icon name="receipt-outline"></ion-icon>الطلبات</a>
+      <a href="employees.html" class="nav-item{active_employees}"><ion-icon name="people-outline"></ion-icon>الموظفون</a>
+
+      <a href="export.html" class="nav-item"><ion-icon name="download-outline"></ion-icon>تصدير القائمة</a>
+      <a href="billing.html" class="nav-item"><ion-icon name="card-outline"></ion-icon>الاشتراك والفواتير</a>
+      <a href="settings.html" class="nav-item"><ion-icon name="settings-outline"></ion-icon>الإعدادات</a>
+      <a href="../index.html" class="nav-item"><ion-icon name="globe-outline"></ion-icon>عرض الموقع</a>
+    </nav>
+
+    <div class="sidebar-user">
+      <div class="avatar">م</div>
+      <span>مدير المطعم</span>
+    </div>
+  </aside>
+  <div class="overlay" data-overlay></div>
+
+  <main class="main">
+    <header class="topbar">
+      <button class="menu-toggle" data-menu-btn><ion-icon name="menu-outline"></ion-icon></button>
+      <div class="page-title">
+        <h1>محرر القائمة</h1>
+        <p>أضف وعدّل وحذف أصناف الطعام</p>
+      </div>
+      <button class="btn btn-gold" onclick="openItemForm()"><ion-icon name="add-outline"></ion-icon><span>صنف جديد</span></button>
+    </header>
+
+    <div class="toolbar">
+      <select class="search-input" id="category-filter" style="min-width: 180px">
+        <option value="">كل التصنيفات</option>
+      </select>
+      <input type="search" class="search-input" id="search-input" placeholder="ابحث باسم الصنف...">
+      <div class="spacer"></div>
+    </div>
+
+    <section class="card">
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr><th>الصنف</th><th>التصنيف</th><th>السعر</th><th>متاح</th><th>مميز</th><th>إجراءات</th></tr>
+          </thead>
+          <tbody id="menu-body"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+
+  <div class="modal" id="item-modal">
+    <div class="modal-box">
+      <div class="modal-head">
+        <h2 id="item-modal-title">صنف جديد</h2>
+        <button class="modal-close" onclick="closeModal('item-modal')"><ion-icon name="close-outline"></ion-icon></button>
+      </div>
+      <form id="item-form" class="form-grid">
+        <input type="hidden" id="item-id">
+        <div class="form-group">
+          <label>الاسم (عربي) *</label>
+          <input type="text" id="item-name-ar" required>
+        </div>
+        <div class="form-group">
+          <label>الاسم (إنجليزي) *</label>
+          <input type="text" id="item-name-en" required>
+        </div>
+        <div class="form-group">
+          <label>التصنيف * <small style="color: var(--quick-silver)">(اكتب أي تصنيف — سيُنشأ تلقائياً إن لم يكن موجوداً)</small></label>
+          <input type="text" id="item-category" list="categories-list" placeholder="مثال: مقبلات، أطباق رئيسية، عصائر..." required autocomplete="off">
+          <datalist id="categories-list"></datalist>
+        </div>
+        <div class="form-group">
+          <label>السعر (دج) *</label>
+          <input type="number" id="item-price" min="0" step="any" required>
+        </div>
+        <div class="form-group full">
+          <label>الوصف (عربي)</label>
+          <textarea id="item-desc-ar"></textarea>
+        </div>
+        <div class="form-group full">
+          <label>الوصف (إنجليزي)</label>
+          <textarea id="item-desc-en"></textarea>
+        </div>
+        <div class="form-group full">
+          <label>صورة الطبق (JPG)</label>
+          <input type="file" id="item-image-file" accept=".jpg,.jpeg,image/jpeg" style="padding: 9px 14px">
+          <input type="hidden" id="item-image">
+          <div id="image-preview" style="margin-top: 10px; display: none">
+            <img id="preview-img" src="" alt="" style="width: 90px; height: 90px; object-fit: cover; border-radius: 10px; border: 1px solid var(--gold-crayola)">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>متاح للطلب</label>
+          <span class="switch" id="item-available" onclick="this.classList.toggle('on')"></span>
+        </div>
+        <div class="form-group">
+          <label>صنف مميز</label>
+          <span class="switch" id="item-featured" onclick="this.classList.toggle('on')"></span>
+        </div>
+      </form>
+      <div class="modal-actions">
+        <button class="btn btn-outline" onclick="closeModal('item-modal')">إلغاء</button>
+        <button class="btn btn-gold" onclick="saveItem()"><ion-icon name="checkmark-outline"></ion-icon>حفظ</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>
+ 
+    if (!window.supabase) document.write('<script src="https://fastly.jsdelivr.net/npm/@supabase/supabase-js@2"><\/script>');
+    if (!window.supabase) document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>');
+  </script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/ui.js"></script>
+  <script src="assets/js/menu.js"></script>
+</body>
+</html>

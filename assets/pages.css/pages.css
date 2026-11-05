@@ -1,0 +1,277 @@
+/*-----------------------------------*\
+  #pages.css
+  Loaded AFTER style.css. Turns the long one-page site into separate pages
+  (Home / Menu / About / Reservation / Contact) and adds a bottom tab bar
+  on phones. This is the same base file as before; only two small,
+  isolated additions were made at the bottom (marked clearly), nothing
+  else was touched, so nothing that already worked should change.
+\*-----------------------------------*/
+
+:root { --radius-5: 5px; }
+
+
+/*-----------------------------------*\
+  #BASE FIXES
+\*-----------------------------------*/
+
+/* the template gives <body> a fixed 300vh height (for the one long page);
+   with separate pages the height must follow the content */
+body {
+  height: auto;
+  min-height: 100vh;
+}
+
+/* keep the scroll lock while the side menu is open */
+body.loaded:not(.nav-active) { overflow: visible; }
+
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* keep the paragraph breaks of the "our story" text */
+.about .section-text { white-space: pre-line; }
+
+
+/*-----------------------------------*\
+  #PAGES
+\*-----------------------------------*/
+
+.page { display: none; }
+
+.page.active {
+  display: block;
+  animation: pageIn 350ms ease both;
+}
+
+@keyframes pageIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page.active { animation: none; }
+}
+
+/* inner pages start below the fixed header */
+.page-inner {
+  padding-top: 92px;
+  min-height: 100vh;
+}
+
+.page-inner > .section:first-child { padding-block-start: 30px; }
+
+/* inner pages always get a solid header (only the home hero has a transparent one) */
+body:not([data-current-page="home"]) .header {
+  background-color: var(--eerie-black-4);
+  border-color: var(--black-alpha-15);
+}
+
+@media (max-width: 574px) {
+  body:not([data-current-page="home"]) .header,
+  body:not([data-current-page="home"]) .header.active { padding-block: 14px; }
+}
+
+@media (min-width: 575px) {
+  .page-inner { padding-top: 190px; }
+}
+
+/* footer only on the contact page */
+body:not([data-current-page="contact"]) .footer { display: none; }
+
+
+/*-----------------------------------*\
+  #RESERVATION PAGE
+\*-----------------------------------*/
+
+/* in the one-page design the form was pulled up over the testimonials */
+.reservation-form {
+  display: block;
+  margin-block-start: 0;
+  max-width: 820px;
+  margin-inline: auto;
+}
+
+.reservation { padding-block-end: var(--section-space); }
+
+.testi { padding-block-end: var(--section-space); }
+
+.form-status {
+  min-height: 24px;
+  margin-block-start: 18px;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  text-align: center;
+  color: var(--quick-silver);
+}
+
+.form-status[data-state="success"] { color: hsl(140, 45%, 62%); }
+.form-status[data-state="error"] { color: hsl(4, 75%, 68%); }
+
+.hp-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.form-left .btn[disabled] {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.input-field option { background-color: var(--eerie-black-2); color: var(--white); }
+
+
+/*-----------------------------------*\
+  #CONTACT PAGE
+\*-----------------------------------*/
+
+.contact-page .form-right {
+  max-width: 640px;
+  margin-inline: auto;
+  border: 1px solid var(--white-alpha-10);
+}
+
+/* compact footer on small screens: the bottom bar already links the pages */
+@media (max-width: 991px) {
+  .footer-pages { display: none; }
+  .footer { padding-block: 40px; }
+  .footer-top { margin-block-end: 30px; }
+  .footer-brand { padding: 40px 24px; }
+}
+
+
+/*-----------------------------------*\
+  #BOTTOM NAV (phones & tablets)
+\*-----------------------------------*/
+
+.bottom-nav { display: none; }
+
+@media (max-width: 991px) {
+
+  .bottom-nav {
+    display: block;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+    background-color: hsla(40, 12%, 5%, 0.97);
+    border-block-start: 1px solid var(--white-alpha-20);
+    padding-bottom: env(safe-area-inset-bottom);
+    transition: transform var(--transition-1);
+  }
+
+  body.nav-active .bottom-nav { transform: translateY(100%); }
+
+  .bottom-nav ul {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .bottom-nav a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3px;
+    padding: 9px 2px 8px;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    text-align: center;
+    color: var(--quick-silver);
+    transition: color var(--transition-1);
+  }
+
+  .bottom-nav ion-icon { font-size: 2.2rem; }
+
+  .bottom-nav a.active {
+    color: var(--gold-crayola);
+    box-shadow: inset 0 2px 0 var(--gold-crayola);
+  }
+
+  /* leave room for the bar */
+  body { padding-bottom: calc(62px + env(safe-area-inset-bottom)); }
+
+  /* keep the "Book a table" badge above the bar */
+  .hero-btn { bottom: 75px; }
+
+}
+
+
+/*-----------------------------------*\
+  #ARABIC / RTL
+\*-----------------------------------*/
+
+/* Arabic needs an Arabic font, and letters must not be spaced apart (it breaks the joining) */
+html[lang="ar"] {
+  --fontFamily-forum: 'Tajawal', sans-serif;
+  --fontFamily-dm_sans: 'Tajawal', sans-serif;
+}
+
+html[lang="ar"] * { letter-spacing: normal !important; }
+
+[dir="rtl"] .icon-wrapper ion-icon:first-child { left: auto; right: 15px; }
+
+[dir="rtl"] .icon-wrapper ion-icon:last-child { right: auto; left: 10px; }
+
+@media (min-width: 992px) {
+  [dir="rtl"] .special-dish { text-align: right; }
+}
+
+
+/*-----------------------------------*\
+  #ADDITIONS (isolated, do not affect anything above)
+\*-----------------------------------*/
+
+/* 1) the language button (#languageBtn) had no styling anywhere, so it
+      rendered as bare unstyled text. This block only touches that one
+      button and cannot affect any other element on the page. */
+.language-switcher { margin-inline-start: auto; }
+
+.language-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--white);
+  font-size: var(--fontSize-label-2);
+  font-weight: var(--weight-bold);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border: 1px solid var(--white-alpha-20);
+  padding: 9px 14px;
+  white-space: nowrap;
+  transition: var(--transition-1);
+}
+
+.language-btn ion-icon {
+  font-size: 1.7rem;
+  --ionicon-stroke-width: 45px;
+}
+
+.language-btn:is(:hover, :focus-visible) {
+  color: var(--gold-crayola);
+  border-color: var(--gold-crayola);
+}
+
+@media (min-width: 1200px) {
+  .language-switcher {
+    margin-inline-start: 0;
+    margin-inline-end: 16px;
+  }
+}
+
+/* 2) in Arabic (RTL) the side menu must slide in from the right, not
+      the left. Only applies while [dir="rtl"], so English is untouched. */
+[dir="rtl"] .navbar {
+  left: auto;
+  right: -360px;
+}
+
+[dir="rtl"] .navbar.active { transform: translateX(-360px); }
+
+@media (min-width: 1200px) {
+  [dir="rtl"] .navbar,
+  [dir="rtl"] .navbar.active { margin-inline: auto 20px; }
+}
